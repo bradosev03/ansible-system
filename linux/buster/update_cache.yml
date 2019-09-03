@@ -1,0 +1,8 @@
+# update the apt cache
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: apt install
+      apt: 
+        update_cache: yes

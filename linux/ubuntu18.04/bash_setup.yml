@@ -1,0 +1,10 @@
+---
+hosts: all
+- vars:
+    user: {{ lookup('env','USER') }}
+- tasks:
+    - name: Edit .bashrc
+      lineinfile:
+          path: "/home/{{ user }}/.bashrc"
+          line: "export PS1=''"
+          insertbefore: EOF

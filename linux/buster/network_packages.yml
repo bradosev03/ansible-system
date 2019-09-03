@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install sysadmin and networking packages
+      apt: 
+        name : "{{ packages }}"
+      vars:
+        packages:
+        - nmap
+        - tshark
+        - wireshark
+        - wireshark-dev
+        - wireshark-common
+        - syslog-ng
+        - whois
+        - traceroute
+        - dnsutils
+        - tcpdump
+        - openssh-server

@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Edit SSH config
+      lineinfile: 
+        path: /etc/ssh/ssh_config
+        regexp: "^#Banner"
+        line: "Banner=/etc/issue"
